@@ -9,6 +9,7 @@ const createproduct = async(req,res)=>
             console.error(error)
         }
     }
+  
     const getProducts = async(req,res)=> 
         {
             try {

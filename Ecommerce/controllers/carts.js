@@ -36,4 +36,15 @@ const AddToCartView = async (req, res) => {
         console.error(error);
     }
 }
-module.exports = { AddToCart, AddToCartView }
+const deleteproduct = async(req,res)=> 
+    {
+        try {
+            const userid = req.userId;
+            const productId = req.body._id
+            const deleteprod =await Cart.deleteOne({_id:productId});
+            res.status(201).json({message:"product is deleted"}); 
+        } catch (error) {
+            console.error(error)
+        }
+    }
+module.exports = { AddToCart, AddToCartView,deleteproduct }
